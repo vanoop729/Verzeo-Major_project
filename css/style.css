@@ -1,0 +1,263 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+#myList{
+	margin-top: 50px;
+	margin-bottom: 20px;
+}
+
+#myList div div div {
+	width: auto;
+	height: 200px;
+	overflow: hidden;
+	padding: 0;
+	position: relative;
+	border: 0.5px solid black;
+	margin-bottom: 10px;
+	border-radius: 10%;
+}
+#myList div div div #p1 {
+  	background: url('../images/sofa-main.jpg') no-repeat;
+  	background-position: center;
+  	
+	}
+#myList div div div #p2 {
+  	background: url('../images/dinning-main.png') no-repeat;
+  	background-position: center;
+  	
+	}
+#myList div div div #p3 {
+  	background: url('../images/kitchen-main.jpg') no-repeat;
+  	background-position: center;
+  	
+	}
+#myList div div div #p4 {
+  	background: url('../images/office-main.jpg') no-repeat;
+  	background-position: center;
+  	
+	}		
+
+#p1 span, #p2 span, #p3 span, #p4 span{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1.6em;
+  text-transform: uppercase;
+  background-color: black;
+  color: #fff;
+  font-weight: bold;
+  opacity: .8;
+}
+
+
+/**/
+
+
+.popup .overlay {
+  position:fixed;
+  top:0px;
+  left:0px;
+  width:100vw;
+  height:100vh;
+  background:rgba(0,0,0,0.7);
+  z-index:1;
+  display:none;
+}
+
+.popup .content {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%) scale(0);
+  background:#fff;
+  width:80%;
+  height:95%;
+  z-index:2;
+  text-align:center;
+  padding:20px;
+  text-align: left;
+}
+
+.popup .close-btn {
+  cursor:pointer;
+  position:absolute;
+  right:20px;
+  top:20px;
+  width:30px;
+  height:30px;
+  background:#fff;
+  color:black;
+  font-size:25px;
+  font-weight:600;
+  line-height:30px;
+  text-align:center;
+  border-radius:50%;
+}
+
+.popup.active .overlay {
+  display:block;
+}
+
+.popup.active .content {
+  transition:all 300ms ease-in-out;
+  transform:translate(-50%,-50%) scale(1);
+}
+/*
+button {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  padding:15px;
+  font-size:18px;
+  border:2px solid #222;
+  color:#222;
+  text-transform:uppercase;
+  font-weight:600;
+  background:#fff;
+}*/
+
+
+.cartContainer {
+    margin-top: 4rem;
+    font-size: 3rem;
+    text-align: center
+}
+
+.cartContainer img {
+    width: 250px!important;
+    height: 150px!important;
+    margin-top: 10px;
+}
+
+.headingTop {
+    border-top: 1px solid black;
+    text-align: center;
+}
+
+.heading {
+    border-bottom: 1px solid black;
+    text-align: center;
+}
+
+.cartTitle {
+    color: green;
+    margin-top: 3rem
+}
+
+.cartPrice {
+    margin-top: 3rem
+}
+
+.removeButton {
+     display: table;
+     margin: 0px auto 0px auto;
+    /*display: inline;*/
+    background-color: red;
+    cursor: pointer;
+    color: black;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 2%;
+    /*vertical-align: middle;*/
+    margin-top: 3rem
+}
+
+.cartQty {
+    margin-top: 3rem
+}
+
+.form-control {
+    color: #000;
+    background-color: #e4cece;
+    font-weight: 900;
+    font-size: 3rem;
+    padding: 0rem 1rem
+}
+
+.totalPrice {
+    margin-top: 4rem
+}
+
+/*nav bar*/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  font-weight: bold;
+  font-size: 17px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: white;
+  color: black!important;
+  border: 1px solid black;
+}
+
+
+/*Footer*/
+#footer{
+	background-color: #262626;
+	color: white;
+}
+/*social media icons*/
+.fa {
+  padding: 5px;
+  padding-left: 0;
+  padding-right: 0;
+  font-size: 35px;
+  width: 50px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 10%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+
+
+@media only screen and (max-width: 500px){
+  #abc1{
+    font-size: 20px;
+  }
+
+  
+}

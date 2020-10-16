@@ -1,0 +1,766 @@
+<!-- Developed by WD08B9 : Major Project (Aug-Sep batch) -->
+
+<!DOCTYPE HTML>
+<html lang = "en">
+<head>
+  <title>Interior Design Verzeo</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">  
+    <link rel="icon" href="images/title.jpg">
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+      
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous">
+    </script>
+    <!-- for social media icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- bootstrap css  cdn-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    
+    <!-- Our CSS style sheet -->
+    <link rel="stylesheet"  type="text/css"  href="css/style.css">
+
+    <style>
+body {
+  font-family: Arial;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+
+#navItems{
+  font-size: 20px;
+}
+</style>
+    </head>
+    <header class="text-gray-700 body-font" style="background-color: #262626;">
+ <!--  <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+      
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+      </svg>
+      <span class="ml-3 text-xl">XYZ Site</span>
+    </a> -->
+    <nav>
+      <h2 style="float: left; margin-top: 10px; padding-left: 10px; padding-right: 10px; color: white; font-style: italic; font-weight: bold;">ELITE DECORS</h2>
+
+      <ul>
+        <li><a onclick="togglePopup()" style="text-decoration: none; cursor: pointer; color: white;">Favourites</a></li>
+        <li><a onclick="togglePopup()" style="text-decoration: none; cursor: pointer; color: white;"> My Cart</a></li>
+        <!-- <li><a href="#footer" style="text-decoration: none; cursor: pointer; color: white;">Contact Us</a></li> -->
+        <li><a href="#footer" style="text-decoration: none; cursor: pointer; color: white;">Contact Us</a></li>
+      </ul>
+
+     
+    </nav>
+    <!-- <button id="navItems" class="inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-base mt-4 md:mt-0">Contact Us
+      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+        <path d="M5 12h14M12 5l7 7-7 7"></path>
+      </svg>
+    </button> -->
+  </div>
+</header>
+    <section class="text-gray-700 body-font">
+  <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+    <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6" class="col-md-6">
+      <img class="object-cover object-center rounded" alt="hero" src="https://cdn.vox-cdn.com/thumbor/AxtQ6RqCSaNOfNLPkv0-5L1xVC0=/0x0:1920x860/1200x0/filters:focal(0x0:1920x860):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/19536853/Early10s.jpg">
+    </div>
+
+    <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center" class="col-md-6">
+      <h1 style="margin-left: 15px; overflow-y: hidden;">
+        ABOUT US
+      </h1>
+      <p style="margin-left: 15px;text-align: left;" class="mb-8 leading-relaxed">At ELITE DECORS we're a different kind of furniture company. We work every day to find new, unique products and styles that offer the very best in today's affordable modern furniture. While our competitors invent new sales or promotions to play the pricing game, we work to ensure that every experience you have with us is fantastic! That means we're concerned about more than just price. Our goal is for you to be thrilled with every single interaction, purchase and product every single time. And to do that we go beyond just low prices; we focus on providing you true value. Whether it's customer service, or shopping experience, cool furniture for your office, or contemporary furniture for your living room or bedroom, we're committed to combining excellent product quality AND service into an experience you just can't beat!</p>
+     
+    </div>
+    
+  </div>
+</section>
+    
+      <center><h1 style="overflow-y: hidden;"><b>Trending Designs</b></h1></center>
+    <p></p>
+    <body>
+
+<h2 style="text-align:center">Design Gallery</h2>
+
+<div class="container">
+  <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+    <img src="https://i.pinimg.com/736x/e9/a9/c3/e9a9c3b10eb6138f5ea76b3ad243f40b.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">2 / 6</div>
+    <img src="https://cdn.decorilla.com/online-decorating/wp-content/uploads/2020/03/2020-interior-design-trends-feature.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 6</div>
+    <img src="https://cdn.decorilla.com/online-decorating/wp-content/uploads/2020/03/design-trends-earth-tones-decorilla-rendering.jpg" style="width:100%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">4 / 6</div>
+    <img src="https://www.decoraid.com/wp-content/uploads/2018/08/Best-2019-Interior-Design-Trends.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 6</div>
+    <img src="https://adorable-home.com/wp-content/uploads/2016/11/Minimalist-Interior-Design-defined.jpg" style="width:100%">
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+    <img src="https://www.essentialhome.eu/inspirations/wp-content/uploads/2018/02/These-Are-the-Current-6-Best-Interior-Designers-in-India.jpg" style="width:100%">
+  </div>
+    
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="https://i.pinimg.com/736x/e9/a9/c3/e9a9c3b10eb6138f5ea76b3ad243f40b.jpg" style="width:100%" onclick="currentSlide(1)" alt="">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="https://cdn.decorilla.com/online-decorating/wp-content/uploads/2020/03/2020-interior-design-trends-feature.jpg" style="width:100%" onclick="currentSlide(2)" alt="">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="https://cdn.decorilla.com/online-decorating/wp-content/uploads/2020/03/design-trends-earth-tones-decorilla-rendering.jpg" style="width:100%" onclick="currentSlide(3)" alt="">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="https://www.decoraid.com/wp-content/uploads/2018/08/Best-2019-Interior-Design-Trends.jpg" style="width:100%" onclick="currentSlide(4)" alt="">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="https://adorable-home.com/wp-content/uploads/2016/11/Minimalist-Interior-Design-defined.jpg" style="width:100%" onclick="currentSlide(5)" alt="">
+    </div>    
+    <div class="column">
+      <img class="demo cursor" src="https://www.essentialhome.eu/inspirations/wp-content/uploads/2018/02/These-Are-the-Current-6-Best-Interior-Designers-in-India.jpg" style="width:100%" onclick="currentSlide(6)" alt="">
+    </div>
+  </div>
+</div>
+
+
+<section id="myList" class="container">
+  <h2 style="text-transform: uppercase;text-align: center;margin-bottom: 20px;font-weight: bold;">Our Services</h2>
+  <div class="row">
+    
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <div>
+        <div id="p1">
+          <span><a href="#sofa-section" style="text-decoration: none; color: white;">Sofa</a></span>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <div>
+        <div id="p2">
+          <span><a href="#dining-section" style="text-decoration: none; color: white;">Dining Tables</a></span>
+        </div>
+        
+      </div>
+
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <div>
+        <div id="p3">
+          <span><a href="#kitchen-section" style="text-decoration: none; color: white;">Kitchen</a></span>
+        </div>
+      </div>
+  
+    </div>
+    <div class="col-lg-3 col-md-4 col-sm-6">
+      <div>
+        <div id="p4">
+          <span><a href="#office-section" style="text-decoration: none; color: white;">Office</a></span>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</section>
+
+<!-- some data -->
+<section class="container" style="margin-bottom: 20px; font-size: 17px;">
+ This interior design firm loves to keep things simple and clean. They can design your home or office at an up front price. Their fees are laid out on their website so there is no confusion on the agreed upon amount per job.IBB Design Fine Furnishings is a store located in Texas. It began in 1989, and has grown since then. They carry top notch brands and unique pieces to design your space, but also have specialists on hand to help you design and create the plan.
+ Robert is an interior designer, but also an activist, philanthropist and more. His design talents are applied at private residences. What's neat is he offers one day makeovers, when he comes to the home and reworks what's already there for a quick update.Our goal is for you to be thrilled with every single interaction, purchase and product every single time. And to do that we go beyond just low prices; we focus on providing you true value. Whether it's customer service, or shopping experience, cool furniture for your office, or contemporary furniture for your living room or bedroom, we're committed to combining excellent product quality AND service into an experience you just can't beat!
+
+</section>
+
+
+<!-- Sofa section start -->
+<section id="sofa-section" class="container">
+  <h3 style="font-weight: bold; font-size: 28px;">SOFA</h3>
+
+  <div class="row">
+    
+    <div class="productContainer col-md-6 " style="border: 1px solid black; margin-bottom: 15px;">
+            <div class="productImage">
+                <img src="images/sofa1.jpg" class='img' style="width: 100%; height: 310px; margin-top: 5px; border: 2px solid black;">
+            </div>
+            <div class="productTitle">
+                <h3 style="text-align: center;">MODEL #701</h3>
+            </div>
+            <div class="productPrice">
+                <h3 style="text-align: center;">25,000</h3>
+            </div>
+            <div class="addToFavBtn" style="display: inline; background-color: black; color: white; float: left; width: 35%; margin-bottom: 3px; text-align: center; height: 30px; padding-top: 5px; border-radius: 3%; cursor: pointer;">
+                Add to Fav
+            </div>
+            <div class="addToFavBtn" style="display: inline; background-color: black; color: white; float: right; width: 35%; margin-bottom: 3px; text-align: center; height: 30px; padding-top: 5px; border-radius: 3%; cursor: pointer;">
+              Add to Cart
+            </div>
+        </div>
+
+        <div class="productContainer col-md-6 " style="border: 1px solid black; margin-bottom: 15px;">
+            <div class="productImage">
+                <img src="images/sofa2.jpg" class='img' style="width: 100%; height: 310px; margin-top: 5px; border: 2px solid black;">
+            </div>
+            <div class="productTitle">
+                <h3 style="text-align: center;">MODEL #716</h3>
+            </div>
+            <div class="productPrice">
+                <h3 style="text-align: center;">53,000</h3>
+            </div>
+            <div class="addToFavBtn" style="display: inline; background-color: black; color: white; float: left; width: 35%; margin-bottom: 3px; text-align: center; height: 30px; padding-top: 5px; border-radius: 3%; cursor: pointer;">
+                Add to Fav
+            </div>
+            <div class="addToFavBtn" style="display: inline; background-color: black; color: white; float: right; width: 35%; margin-bottom: 3px; text-align: center; height: 30px; padding-top: 5px; border-radius: 3%; cursor: pointer;">
+              Add to Cart
+            </div>
+        </div>
+
+        <div class="productContainer col-md-6 " style="border: 1px solid black; margin-bottom: 15px;">
+            <div class="productImage">
+                <img src="images/sofa3.jpg" class='img' style="width: 100%; height: 310px; margin-top: 5px; border: 2px solid black;">
+            </div>
+            <div class="productTitle">
+                <h3 style="text-align: center;">MODEL #719</h3>
+            </div>
+            <div class="productPrice">
+                <h3 style="text-align: center;">24,000</h3>
+            </div>
+            <div class="addToFavBtn" style="display: inline; background-color: black; color: white; float: left; width: 35%; margin-bottom: 3px; text-align: center; height: 30px; padding-top: 5px; border-radius: 3%; cursor: pointer;">
+                Add to Fav
+            </div>
+            <div class="addToFavBtn" style="display: inline; background-color: black; color: white; float: right; width: 35%; margin-bottom: 3px; text-align: center; height: 30px; padding-top: 5px; border-radius: 3%; cursor: pointer;">
+              Add to Cart
+            </div>
+        </div>
+
+        <div class="productContainer col-md-6 " style="border: 1px solid black; margin-bottom: 15px;">
+            <div class="productImage">
+                <img src="images/sofa4.jpg" class='img' style="width: 100%; height: 310px; margin-top: 5px; border: 2px solid black;">
+            </div>
+            <div class="productTitle">
+                <h3 style="text-align: center;">MODEL #725</h3>
+            </div>
+            <div class="productPrice">
+                <h3 style="text-align: center;">65,000</h3>
+            </div>
+            <div class="addToFavBtn" style="display: inline; background-color: black; color: white; float: left; width: 35%; margin-bottom: 3px; text-align: center; height: 30px; padding-top: 5px; border-radius: 3%; cursor: pointer;">
+                Add to Fav
+            </div>
+            <div class="addToFavBtn" style="display: inline; background-color: black; color: white; float: right; width: 35%; margin-bottom: 3px; text-align: center; height: 30px; padding-top: 5px; border-radius: 3%; cursor: pointer;">
+              Add to Cart
+            </div>
+        </div>
+
+
+
+
+
+  </div>
+
+
+</section>
+<!-- End of SOFA section -->
+
+
+
+<!-- Dining table section -->
+<section id="dining-section" class="container">
+  <h3 style="font-weight: bold; font-size: 28px;">DINING TABLES</h3>
+
+  <div class="row">
+    
+    <div class="productContainer col-md-6 " style="border: 1px solid black; margin-bottom: 15px;">
+            <div class="productImage">
+                <img src="images/din1.jpg" class='img' style="width: 100%; height: 310px; margin-top: 5px; border: 2px solid black;">
+            </div>
+            <div class="productTitle">
+                <h3 style="text-align: center;">MODEL #405</h3>
+            </div>
+            <div class="productPrice">
+                <h3 style="text-align: center;">30,000</h3>
+            </div>
+            <div class="addToFavBtn" style="display: inline; background-color: black; color: white; float: left; width: 35%; margin-bottom: 3px; text-align: center; height: 30px; padding-top: 5px; border-radius: 3%; cursor: pointer;">
+                Add to Fav
+            </div>
+            <div class="addToFavBtn" style="display: inline; background-color: black; color: white; float: right; width: 35%; margin-bottom: 3px; text-align: center; height: 30px; padding-top: 5px; border-radius: 3%; cursor: pointer;">
+              Add to Cart
+            </div>
+        </div>
+
+        <div class="productContainer col-md-6 " style="border: 1px solid black; margin-bottom: 15px;">
+            <div class="productImage">
+                <img src="images/din2.jpg" class='img' style="width: 100%; height: 310px; margin-top: 5px; border: 2px solid black;">
+            </div>
+            <div class="productTitle">
+                <h3 style="text-align: center;">MODEL #408</h3>
+            </div>
+            <div class="productPrice">
+                <h3 style="text-align: center;">26,000</h3>
+            </div>
+            <div class="addToFavBtn" style="display: inline; background-color: black; color: white; float: left; width: 35%; margin-bottom: 3px; text-align: center; height: 30px; padding-top: 5px; border-radius: 3%; cursor: pointer;">
+                Add to Fav
+            </div>
+            <div class="addToFavBtn" style="display: inline; background-color: black; color: white; float: right; width: 35%; margin-bottom: 3px; text-align: center; height: 30px; padding-top: 5px; border-radius: 3%; cursor: pointer;">
+              Add to Cart
+            </div>
+        </div>
+
+        <div class="productContainer col-md-6 " style="border: 1px solid black; margin-bottom: 15px;">
+            <div class="productImage">
+                <img src="images/din3.jpg" class='img' style="width: 100%; height: 310px; margin-top: 5px; border: 2px solid black;">
+            </div>
+            <div class="productTitle">
+                <h3 style="text-align: center;">MODEL #401</h3>
+            </div>
+            <div class="productPrice">
+                <h3 style="text-align: center;">41,000</h3>
+            </div>
+            <div class="addToFavBtn" style="display: inline; background-color: black; color: white; float: left; width: 35%; margin-bottom: 3px; text-align: center; height: 30px; padding-top: 5px; border-radius: 3%; cursor: pointer;">
+                Add to Fav
+            </div>
+            <div class="addToFavBtn" style="display: inline; background-color: black; color: white; float: right; width: 35%; margin-bottom: 3px; text-align: center; height: 30px; padding-top: 5px; border-radius: 3%; cursor: pointer;">
+              Add to Cart
+            </div>
+        </div>
+
+        <div class="productContainer col-md-6 " style="border: 1px solid black; margin-bottom: 15px;">
+            <div class="productImage">
+                <img src="images/din4.jpg" class='img' style="width: 100%; height: 310px; margin-top: 5px; border: 2px solid black;">
+            </div>
+            <div class="productTitle">
+                <h3 style="text-align: center;">MODEL #427</h3>
+            </div>
+            <div class="productPrice">
+                <h3 style="text-align: center;">43,000</h3>
+            </div>
+            <div class="addToFavBtn" style="display: inline; background-color: black; color: white; float: left; width: 35%; margin-bottom: 3px; text-align: center; height: 30px; padding-top: 5px; border-radius: 3%; cursor: pointer;">
+                Add to Fav
+            </div>
+            <div class="addToFavBtn" style="display: inline; background-color: black; color: white; float: right; width: 35%; margin-bottom: 3px; text-align: center; height: 30px; padding-top: 5px; border-radius: 3%; cursor: pointer;">
+              Add to Cart
+            </div>
+        </div>
+
+
+
+
+
+  </div>
+
+
+</section>
+<!-- dining section ending -->
+
+
+
+<!-- kitchen section -->
+<section id="kitchen-section" class="container">
+  <h3 style="font-weight: bold; font-size: 28px;">KITCHEN</h3>
+
+  <div class="row">
+    
+    <div class="productContainer col-md-6 " style="border: 1px solid black; margin-bottom: 15px;">
+            <div class="productImage">
+                <img src="images/kitchen1.jpg" class='img' style="width: 100%; height: 310px; margin-top: 5px; border: 2px solid black;">
+            </div>
+            <div class="productTitle">
+                <h3 style="text-align: center;">MODEL #909</h3>
+            </div>
+            <div class="productPrice">
+                <h3 style="text-align: center;">97,000</h3>
+            </div>
+            <div class="addToFavBtn" style="display: inline; background-color: black; color: white; float: left; width: 35%; margin-bottom: 3px; text-align: center; height: 30px; padding-top: 5px; border-radius: 3%; cursor: pointer;">
+                Add to Fav
+            </div>
+            <div class="addToFavBtn" style="display: inline; background-color: black; color: white; float: right; width: 35%; margin-bottom: 3px; text-align: center; height: 30px; padding-top: 5px; border-radius: 3%; cursor: pointer;">
+              Add to Cart
+            </div>
+        </div>
+
+        <div class="productContainer col-md-6 " style="border: 1px solid black; margin-bottom: 15px;">
+            <div class="productImage">
+                <img src="images/kitchen2.jpg" class='img' style="width: 100%; height: 310px; margin-top: 5px; border: 2px solid black;">
+            </div>
+            <div class="productTitle">
+                <h3 style="text-align: center;">MODEL #922</h3>
+            </div>
+            <div class="productPrice">
+                <h3 style="text-align: center;">157,000</h3>
+            </div>
+            <div class="addToFavBtn" style="display: inline; background-color: black; color: white; float: left; width: 35%; margin-bottom: 3px; text-align: center; height: 30px; padding-top: 5px; border-radius: 3%; cursor: pointer;">
+                Add to Fav
+            </div>
+            <div class="addToFavBtn" style="display: inline; background-color: black; color: white; float: right; width: 35%; margin-bottom: 3px; text-align: center; height: 30px; padding-top: 5px; border-radius: 3%; cursor: pointer;">
+              Add to Cart
+            </div>
+        </div>
+
+        <div class="productContainer col-md-6 " style="border: 1px solid black; margin-bottom: 15px;">
+            <div class="productImage">
+                <img src="images/kitchen3.jpg" class='img' style="width: 100%; height: 310px; margin-top: 5px; border: 2px solid black;">
+            </div>
+            <div class="productTitle">
+                <h3 style="text-align: center;">MODEL #924</h3>
+            </div>
+            <div class="productPrice">
+                <h3 style="text-align: center;">146,000</h3>
+            </div>
+            <div class="addToFavBtn" style="display: inline; background-color: black; color: white; float: left; width: 35%; margin-bottom: 3px; text-align: center; height: 30px; padding-top: 5px; border-radius: 3%; cursor: pointer;">
+                Add to Fav
+            </div>
+            <div class="addToFavBtn" style="display: inline; background-color: black; color: white; float: right; width: 35%; margin-bottom: 3px; text-align: center; height: 30px; padding-top: 5px; border-radius: 3%; cursor: pointer;">
+              Add to Cart
+            </div>
+        </div>
+
+        <div class="productContainer col-md-6 " style="border: 1px solid black; margin-bottom: 15px;">
+            <div class="productImage">
+                <img src="images/kitchen4.jpg" class='img' style="width: 100%; height: 310px; margin-top: 5px; border: 2px solid black;">
+            </div>
+            <div class="productTitle">
+                <h3 style="text-align: center;">MODEL #913</h3>
+            </div>
+            <div class="productPrice">
+                <h3 style="text-align: center;">162,000</h3>
+            </div>
+            <div class="addToFavBtn" style="display: inline; background-color: black; color: white; float: left; width: 35%; margin-bottom: 3px; text-align: center; height: 30px; padding-top: 5px; border-radius: 3%; cursor: pointer;">
+                Add to Fav
+            </div>
+            <div class="addToFavBtn" style="display: inline; background-color: black; color: white; float: right; width: 35%; margin-bottom: 3px; text-align: center; height: 30px; padding-top: 5px; border-radius: 3%; cursor: pointer;">
+              Add to Cart
+            </div>
+        </div>
+
+
+
+
+
+  </div>
+
+
+</section>
+<!-- kitchen section ends here -->
+
+
+<!-- OFFICE section start  -->
+
+<section id="office-section" class="container">
+  <h3 style="font-weight: bold; font-size: 28px;">OFFICE</h3>
+
+  <div class="row">
+    
+    <div class="productContainer col-md-6 " style="border: 1px solid black; margin-bottom: 15px;">
+            <div class="productImage">
+                <img src="images/office1.jpg" class='img' style="width: 100%; height: 310px; margin-top: 5px; border: 2px solid black;">
+            </div>
+            <div class="productTitle">
+                <h3 style="text-align: center;">MODEL #811</h3>
+            </div>
+            <div class="productPrice">
+                <h3 style="text-align: center;">99,000</h3>
+            </div>
+            <div class="addToFavBtn" style="display: inline; background-color: black; color: white; float: left; width: 35%; margin-bottom: 3px; text-align: center; height: 30px; padding-top: 5px; border-radius: 3%; cursor: pointer;">
+                Add to Fav
+            </div>
+            <div class="addToFavBtn" style="display: inline; background-color: black; color: white; float: right; width: 35%; margin-bottom: 3px; text-align: center; height: 30px; padding-top: 5px; border-radius: 3%; cursor: pointer;">
+              Add to Cart
+            </div>
+        </div>
+
+        <div class="productContainer col-md-6 " style="border: 1px solid black; margin-bottom: 15px;">
+            <div class="productImage">
+                <img src="images/office2.jpg" class='img' style="width: 100%; height: 310px; margin-top: 5px; border: 2px solid black;">
+            </div>
+            <div class="productTitle">
+                <h3 style="text-align: center;">MODEL #816</h3>
+            </div>
+            <div class="productPrice">
+                <h3 style="text-align: center;">92,000</h3>
+            </div>
+            <div class="addToFavBtn" style="display: inline; background-color: black; color: white; float: left; width: 35%; margin-bottom: 3px; text-align: center; height: 30px; padding-top: 5px; border-radius: 3%; cursor: pointer;">
+                Add to Fav
+            </div>
+            <div class="addToFavBtn" style="display: inline; background-color: black; color: white; float: right; width: 35%; margin-bottom: 3px; text-align: center; height: 30px; padding-top: 5px; border-radius: 3%; cursor: pointer;">
+              Add to Cart
+            </div>
+        </div>
+
+        <div class="productContainer col-md-6 " style="border: 1px solid black; margin-bottom: 15px;">
+            <div class="productImage">
+                <img src="images/office3.jpg" class='img' style="width: 100%; height: 310px; margin-top: 5px; border: 2px solid black;">
+            </div>
+            <div class="productTitle">
+                <h3 style="text-align: center;">MODEL #835</h3>
+            </div>
+            <div class="productPrice">
+                <h3 style="text-align: center;">127,000</h3>
+            </div>
+            <div class="addToFavBtn" style="display: inline; background-color: black; color: white; float: left; width: 35%; margin-bottom: 3px; text-align: center; height: 30px; padding-top: 5px; border-radius: 3%; cursor: pointer;">
+                Add to Fav
+            </div>
+            <div class="addToFavBtn" style="display: inline; background-color: black; color: white; float: right; width: 35%; margin-bottom: 3px; text-align: center; height: 30px; padding-top: 5px; border-radius: 3%; cursor: pointer;">
+              Add to Cart
+            </div>
+        </div>
+
+        <div class="productContainer col-md-6 " style="border: 1px solid black; margin-bottom: 15px;">
+            <div class="productImage">
+                <img src="images/office4.jpg" class='img' style="width: 100%; height: 310px; margin-top: 5px; border: 2px solid black;">
+            </div>
+            <div class="productTitle">
+                <h3 style="text-align: center;">MODEL #804</h3>
+            </div>
+            <div class="productPrice">
+                <h3 style="text-align: center;">110,000</h3>
+            </div>
+            <div class="addToFavBtn" style="display: inline; background-color: black; color: white; float: left; width: 35%; margin-bottom: 3px; text-align: center; height: 30px; padding-top: 5px; border-radius: 3%; cursor: pointer;">
+                Add to Fav
+            </div>
+            <div class="addToFavBtn" style="display: inline; background-color: black; color: white; float: right; width: 35%; margin-bottom: 3px; text-align: center; height: 30px; padding-top: 5px; border-radius: 3%; cursor: pointer;">
+              Add to Cart
+            </div>
+        </div>
+
+
+
+
+
+  </div>
+
+
+</section>
+
+<!-- popup favourite -->
+<div class="popup" id="popup-1">
+  <div class="overlay"></div>
+  <div class="content">
+    <h2 id="abc1" style="text-align: center; font-weight: bold; font-style: italic;">FAVOURITES / MY CART</h2>
+    <div class="close-btn" onclick="togglePopup()">&times;</div>
+    
+    <div class="cartContainer">
+        <div class="row">
+            <div class="col-xs-3 heading"> Product</div>
+            <div class="col-xs-3 heading"> Model</div>
+            <div class="col-xs-3 heading"> Price</div>
+            <div class="col-xs-3 heading">Action</div>  
+        </div>
+
+    </div>
+
+    <div class="row totalPrice">
+        <div class="col-xs-3 " style="border-top: 1px solid black;"> </div>
+        <div class="col-xs-3 " style="border-top: 1px solid black;"> </div>
+
+        <div class="col-xs-3 headingTop" style="font-size: 3rem;"> Total &#8377;</div>
+        <div class="col-xs-3 headingTop cartTotalPrice" style="font-size: 3rem;"> 0</div>
+    </div>
+
+    <div style="text-align: center; margin-top: 50px; overflow: hidden;"><span style="border: 1px solid black; background-color: green; color: white; border-radius: 2%; font-size: 20px; padding: 5px; cursor: pointer;" onclick="alert('Order Successful!!');">Check Out</span></div>
+
+  </div>
+</div>
+
+
+
+<!-- Footer -->
+
+<footer id="footer" style="margin-top: 20px;">
+  
+ <div class="row">
+   
+   <div class="col-sm-4">
+     
+     <div style="padding: 10px;">
+      <p style="text-align: center;font-size: 20px;font-weight: bold;">Contact Details:</p>
+      <p>ADDRESS: Building #21, Andheri East, Mumbai, Maharashtra, India.</p>
+      <p>EMAIL: elite-decors@gmail.com</p>
+      <p>PHONE: 0484 265548</p>
+     </div>
+
+   </div>
+
+   <div class="col-sm-4">
+     
+     <div style="padding: 10px;">
+      <p style="text-align: center;font-size: 20px;font-weight: bold;">Social Media:</p>
+      <p><center>Follow Us On:</center></p>
+        <center>
+      <a href="#" class="fa fa-facebook"></a>
+      <a href="#" class="fa fa-twitter"></a>
+      <a href="#" class="fa fa-instagram"></a>
+        </center>
+     </div>
+
+   </div>
+
+   <div class="col-sm-4">
+     
+     <div style="padding: 10px;">
+      <p style="text-align: center;font-size: 20px;font-weight: bold;">Testimonial:</p>
+      <p>* One of the Best Interior Designers I ever met -Ashok Mishra</p>
+      <p>* Highly trained employees and professional service at reasonable cost - Sundar Bansal </p>
+     </div>
+
+   </div>
+
+
+ </div>
+
+ <p style="text-align: center;">&copy; 2020 | ELITE DECORS | All Rights Reserved</p>
+
+</footer>
+
+
+
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+  <script defer src='js/script.js'></script>  
+    
+ </body>
+ </html>   
